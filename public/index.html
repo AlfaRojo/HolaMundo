@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Calculadora JS</title>
-    <style>
+    <!--<style>
         .colWrap {
             overflow: auto;
             max-width: 2050px;
@@ -22,7 +22,7 @@
             flex-flow: column nowrap;
             align-items: flex-start;
         }
-    </style>
+    </style>-->
     <style>
         /*Diseño*/
         input[type="button"]:hover { /*Apuntando Tecla*/
@@ -133,7 +133,6 @@
         function escribir(n) {
             var caja2 = document.f1.txtcaja2.value;
             if (borrar) {
-                //alert("se borro");
                 document.f1.txtcaja2.value = "";
                 borrar = false;
                 document.f1.txtcaja2.value = n;
@@ -146,21 +145,21 @@
                 document.f1.txtcaja2.value = caja2 + n;
             }
         }
-        function Funcion(o) {
+        function Funcion(dato) {
             var caja1 = document.f1.txtcaja1.value;
             var caja2 = document.f1.txtcaja2.value;
             var unum = caja1.substring(caja1.length - 1);
             calcular()
             if (unum == "+" || unum == "-" || unum == "*" || unum == "/") {
-                unum = unum.replace(unum, o);
+                unum = unum.replace(unum, dato);
                 var res = caja1.substring(0, caja1.length - 1);
-                document.f1.txtcaja1.value = res + unum;
+                document.f1.txtcaja1.value = res + unum ;
             }
             if (caja1 == "" && caja2 != "") {
-                document.f1.txtcaja1.value = caja2 + o;
+                document.f1.txtcaja1.value = caja2 + dato;
             }
             else {
-                document.f1.txtcaja1.value = caja1 + caja2 + o;
+                document.f1.txtcaja1.value = caja1 + caja2 + dato;
             }
             borrar = true;
         }
@@ -175,7 +174,7 @@
         function MasMenos() {
             var caja2 = document.f1.txtcaja2.value;
             caja2 = caja2 * -1;
-            document.f1.txtcaja2.value = (-" + caja2 + ");
+            document.f1.txtcaja2.value = (caja2);
         }
     </script>
 </body>
